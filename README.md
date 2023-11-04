@@ -12,25 +12,17 @@ Heavily inspired by [Ray tracing in one weekend](https://raytracing.github.io/bo
 
 ### 1. Install libraries
 
-You will need [png++-0.2.9](https://download.savannah.nongnu.org/releases/pngpp/) which is a thin wrapper around `libpng` which you also need to install.
+The two main libraries [png++-0.2.9](https://download.savannah.nongnu.org/releases/pngpp/) and [BS_thread_pool](https://github.com/bshoshany/thread-pool#getting-started)
+come with this project since they are simple header only libraries. However you still need to install libpng for png++ to work.
 
 ```bash
 # This is to install libpng
 sudo apt-get install libpng-dev
 ```
 
-[BS_thread_pool](https://github.com/bshoshany/thread-pool#getting-started) is also needed for this demo
-
-
-```bash
-# If you have vcpkg and don't want to break your head
-./vcpkg install bshoshany-thread-pool
-```
-
 ### 2. Run with cmake
 ```bash
- # if you don't have vcpkg then don't add the last part
-cmake -S . -B build/"
+cmake -S . -B build/
 cmake --build build/ --config Release
 ./build/ray_tracer.exe
 ```
